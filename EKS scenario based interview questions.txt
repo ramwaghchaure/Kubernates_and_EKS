@@ -1,0 +1,14 @@
+scenario 1 : if there is an error while access EKS Cluster "you must logged in to server"
+Cause:  THE IAM role is not authorized to access the cluster.
+Solution: Ensure that IAM role is added to the aws-auth 
+-----------------------------------------------------------------------------------------------------------------
+scenario 3: while accessing to eks cluster there is an error "the connection to the server is refused"
+Cause:  the cluster name is incorrect or kubeconfig is outdated
+Solution:   # aws eks update-kubeconfig
+-------------------------------------------------------------------------------------------------------------
+scenario 3: AWS eks get token fails
+Cause :  AWS CLI is outdated
+Solution: upgrade AWS CLI (aws --version)  and retry
+-------------------------------------------------------------------------------------------------------------
+
+

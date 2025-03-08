@@ -1,0 +1,46 @@
+# kubectl get endpoints                                                   ---> to list endpoints
+# kubectl cluster-info                                                    ---> to get cluster info
+# kubectl get node                                                        ---> to list all the nodes
+# kubectl get pod                                                         --->  to list the pod
+# kubectl run test-pod --image=busybox --restart=Never \                  ---> To run test pod
+-- sleep 3600
+# kubectl exec -it test-pod -- sh                                         ---> to access pod
+# kubectl version                                                         ---> to check the version of kubernates on the node
+# kubectl get node -o wide                                                ---> to know the version of OS running on kubernates node
+# kubectl run nginx --image=nginx                                         ---> to run nginx pod
+# kubectl create deployment nginx --image=nginx                           ---> to create a deployment using using nginx image
+# kubectl describe pod myapp-pod                                          --->  describe pod myapp-pod
+# kubectl create namespace my-namespace                                   ---> create a namspaces
+# kubectl apply -f namespace.yaml                                         --->  create namespace using definition file
+# kubectl get pods -n my-namespace                                        --->  get pods in given namespace
+# kubectl config set-context --current --namespace                         -->  set default namespace for kubectl commands
+=my-namespace
+# kubectl config view --minify | grep namespace                           ---> verify current namespace
+# kubectl delete namespace my-namespace                                   --->   this will delete everything in namespace
+# kubectl run nginx --image=nginx                                         ---> create a new pod with nginx image
+# kubectl describe pods newpods-rnkds                                     --> to see which image is being used to create a new pod
+# kubectl describe pod webapp                                             -->  to see how many containers are part of the pods
+# kubectl get pods -A                                                     --- to list all pods in namespaces
+# kubectl get endpoints                                                   ---> to list endpoints
+# kubectl cluster-info                                                    ---> to get cluster info
+# kubectl get node                                                        --> to list all the nodes
+# kubectl get pod                                                         --->  to list the pod
+# kubectl run test-pod --image=busybox --restart=Never \                  ---> To run test pod
+-- sleep 3600
+# kubectl exec -it test-pod -- sh                                         ---> to access pod
+# kubectl version                                                         ---> to check the version of kubernates on the node
+# kubectl get node -o wide                                                ---> to know the version of OS running on kubernates node
+# kubectl run nginx --image=nginx                                         ---> to run nginx pod
+# kubectl create deployment nginx --image=nginx                           ---> to create a deployment using using nginx image
+# kubectl describe pod myapp-pod                                          --->  describe pod myapp-pod
+# kubectl create namespace my-namespace                                   ---> create a namspaces
+# kubectl apply -f namespace.yaml                                         --->  create namespace using definition file
+# kubectl get pods -n my-namespace                                        --->  get pods in given namespace
+# kubectl config set-context --current --namespace                        --->  set default namespace for kubectl commands
+=my-namespace
+#  kubectl config view --minify | grep namespace                          ---> verify current namespace
+# kubectl delete namespace my-namespace                                   --->   this will delete everything in namespace
+# kubectl run nginx --image=nginx                                         ---> create a new pod with nginx image
+# kubectl describe pods newpods-rnkds                                     --> to see which image is being used to create a new pod
+
+

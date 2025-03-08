@@ -1,0 +1,4 @@
+1. What is kubeconfig in Amazon EKS?
+A kubeconfig file is a configuration file used by kubectl (Kubernetes command-line tool) to authenticate and interact with a Kubernetes cluster, including Amazon EKS (Elastic Kubernetes Service). It contains details about the cluster, user credentials, authentication methods, and contexts for managing multiple clusters.
+
+2. 

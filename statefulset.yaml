@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: tomcat
+spec:
+  serviceName: "tomcat"
+  replicas: 3
+  selector:
+    matchLabels:
+      app: tomcat
+  template:
+    metadata:
+      labels:
+        app: tomcat
+    spec:
+      containers:
+      - name: tomcat
+        image: tomcat:8.0
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: tomcat-storage
+          mountPath: /usr/local/tomcat
+  volumeClaimTemplates:
+  - metadata:
+      name: tomcat-storage
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      resources:
+        requests:
+          storage: 1Gi
+      storageClassName: manual

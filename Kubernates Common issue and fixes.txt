@@ -1,0 +1,68 @@
+Scenario 1 :   deploy pod name "my-pod" , and run container inside using image "nginx", with container
+name "my-container".
+Ans:   vi pod-deployment.yaml
+apiVersion: v1
+kind: pod
+metadata:
+       name: my-pod
+spec:
+    containers:
+         - name: my-container
+           image: nginx
+--------------------------------------------------------------------------------------------------------------------------------------------
+Scenario 2: deploy replicaset
+# vi deploy-replicaset.yaml
+apiVersion: apps/v1
+kind:  ReplicaSet
+metadata: 
+      name: my-replicaset
+spec:
+    replicas: 3
+    selector:
+        matchLabels:
+              app: my-app
+        template:
+             metadata:
+                  labels:
+                      app: my-app
+              spec:
+                  containers:
+                      - name:  my-container
+                        image: nginx
+---------------------------------------------------------------------------------------------------------------------------------------
+Scenario 3: deploy container name "my-container", image=nginx , give name to application is "my-app". make
+3 replicas
+
+apiVersion: apps/v1
+kind: deployement
+metadata:
+     name: my-deployment
+spec:
+   replicas: 3
+   selector:
+         matchLables:
+                app: my-app
+   template:
+       metadata:
+            labels:
+                app: my-app
+        spec:
+            containers:
+                 - name:  my-containers
+                   image: nginx
+---------------------------------------------------------------------------------------------------------------------------------------------
+scenario 4:  create namespace yaml file, and apply namespaces 
+# vi namesapces.yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: my-namespace
+
+# kubectl apply -f namespace.yaml
+-------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+        

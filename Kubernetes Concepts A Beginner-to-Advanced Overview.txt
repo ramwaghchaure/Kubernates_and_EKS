@@ -1,0 +1,74 @@
+Kubernetes Concepts – https://kubernetes.io/docs/concepts/
+Pod Overview- https://kubernetes.io/docs/concepts/workloads/pods/pod-overview/
+
+1. Core Kubernetes Architecture
+1.1 Master Node (Control Plane)
+The control plane manages the Kubernetes cluster. Key components:
+API Server (kube-apiserver) – The front-end for Kubernetes, handling API requests.
+Scheduler (kube-scheduler) – Assigns workloads (Pods) to worker nodes.
+Controller Manager (kube-controller-manager) – Ensures desired state matches the current state.
+Etcd – A distributed key-value store for cluster configuration and state data.
+Cloud Controller Manager – Manages interactions with cloud providers (AWS, GCP, Azure, etc.).
+
+1.2 Worker Nodes
+Nodes run application workloads. Key components:
+Kubelet – Agent running on nodes to ensure Pods are running.
+Kube Proxy – Maintains network rules and service discovery.
+Container Runtime – Runs containers (e.g., Docker, containerd, CRI-O).
+-------------------------------------------------------------------------------------------------------------------------
+2. Kubernetes object and their meaning
+
+2.1 Pods : The smallest deployable unit in Kubernetes. Can contain one or more containers.
+2.2 ReplicaSet : Ensures a specified number of Pod replicas are running.
+2.3 Deployment : Manages the rollout and rollback of applications.
+2.4 Service : Exposes Pods internally or externally for communication.
+2.5 ConfigMap & Secret : ConfigMap stores non-sensitive configuration data. 
+Secret stores sensitive data like passwords, API keys.
+Persistent Volume (PV) & Persistent Volume Claim (PVC)
+PV: Pre-provisioned storage.
+PVC: A request for storage by a Pod.
+2.6  endpoint :  is IP address of pod
+-------------------------------------------------------------------------------------------------------------------------
+3. 3. Kubernetes Networking
+3.1 Cluster Networking
+Uses CNI (Container Network Interface) plugins like Flannel, Calico, Cilium.
+3.2 Service Types
+ClusterIP (default) – Internal communication only.
+NodePort – Exposes services on a static port on each node.
+LoadBalancer – Uses a cloud provider’s load balancer.
+Ingress – Manages HTTP/HTTPS traffic.
+--------------------------------------------------------------------------------------------------------------------------
+4. Kubernetes Security
+RBAC (Role-Based Access Control) – Controls access using Roles and RoleBindings.
+Pod Security Standards – Restricts Pod permissions.
+Network Policies – Controls traffic between Pods.
+----------------------------------------------------------------------------------------------------------------------
+5. 5. Kubernetes Scaling & High Availability
+5.1 Horizontal Pod Autoscaler (HPA) : Scales Pods based on CPU/memory usage.
+# kubectl autoscale deployment my-deployment --cpu-percent=50 --min=1 --max=5
+5.2 Cluster Autoscaler : Automatically adds/removes nodes.
+----------------------------------------------------------------------------------------------------------------------
+6. what is Coredns in kubernates?
+CoreDNS is the default DNS server used in Kubernetes for service discovery and internal DNS resolution. 
+It allows Pods to resolve Services within the cluster using DNS names.
+--------------------------------------------------------------------------------------------------------------------
+7. what is the kubernates definition file and top level field in it
+kubernates definition file contains following 4 top level field
+apiVersion: This is the version of the kubernates API you're using to create the object
+kind:  refer to the types of object we are trying to create
+metadata: is data about the object like it's name lables etc. as you can see unlike the fist two where you have specified
+a string value . so everything under metadata to the right a little bit and so names and lables are childrens of metadata
+spec: we sre specifying addition ainformation of object that we are going to create like conatinaer name and image is being used
+----------------------------------------------------------------------------------------------------------------------------
+8. What is a Namespace in Kubernetes?
+A Namespace in Kubernetes is a way to logically isolate and organize resources within a cluster. 
+It helps in managing different environments, users, or teams by creating separate spaces for their workloads.
+---------------------------------------------------------------------------------------------------------------------------------
+9. Namespace vs. Context
+Namespace: A logical grouping of resources within a cluster.
+Context: Stores cluster information, including user credentials and namespace.
+-----------------------------------------------------------------------------------------------------------------------------
+
+
+
+
