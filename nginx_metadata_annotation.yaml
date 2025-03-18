@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-with-annotations
+  annotations:
+    description: "Nginx Pod with custom annotations"
+    owner: "DevOps Team"
+spec:
+  containers:
+    - name: nginx
+      image: nginx:latest
+      ports:
+        - containerPort: 80
